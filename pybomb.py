@@ -77,7 +77,7 @@ class SendSms():
                 raise
         except:
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> svc.apps.tiklagelsin.com")
-   def Hey(self):
+    def Hey(self):
         try:
             url = f"https://heyapi.heymobility.tech:443/V14//api/User/ActivationCodeRequest?organizationId=9DCA312E-18C8-4DAE-AE65-01FEAD558739&phonenumber={self.phone}&requestid=18bca4e4-2f45-41b0-b054-3efd5b2c9c57-20230730&territoryId=738211d4-fd9d-4168-81a6-b7dbf91170e9"
             headers = {"Accept": "application/json, text/plain, */*", "Accept-Encoding": "gzip, deflate", "User-Agent": "HEY!%20Scooter/143 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Accept-Language": "tr"}
@@ -891,4 +891,3 @@ class SendSms():
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> getir.com")
 
     #carfour
-
