@@ -13,7 +13,7 @@ class SendSms():
             self.mail = mail
         else:
             self.mail = ''.join(choice(ascii_lowercase) for i in range(19))+"@gmail.com"
-     def kahve(self):
+    def kahve(self):
         try:
             wmf = requests.post("https://www.kahvedunyasi.com/kayit-ol", data={
                 "mobilenumber": self.phone
