@@ -15,7 +15,7 @@ class SendSms():
             self.mail = ''.join(choice(ascii_lowercase) for i in range(19))+"@gmail.com"
     def kahve(self):
         try:
-            wmf = requests.post("core.kahvedunyasi.com", data={
+            wmf = requests.post("core.kahvedunyasi.com/api/users/sms/send", data={
                 "mobile_number": self.phone,
                 "token_type":"register_token"
             })
