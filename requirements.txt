@@ -6,3 +6,4 @@ easygui
 pyyaml
 InquirerPy
 Pandas
+Selenium
