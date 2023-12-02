@@ -1,0 +1,8 @@
+colorama
+pycryptodome
+cloudscraper
+console
+easygui
+pyyaml
+InquirerPy
+Pandas
