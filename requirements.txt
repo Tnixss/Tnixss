@@ -7,3 +7,7 @@ pyyaml
 InquirerPy
 Pandas
 Selenium
+discord-webhook
+pycrypto
+crypto
+PySocks
